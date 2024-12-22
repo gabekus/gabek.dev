@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/BlogPost.astro";
 import PianoImage from "../../public/piano.jpeg";
 import PianoImage2 from "../../public/piano2.jpeg";
+import ExternalLink from "../components/ExternalLink.astro";
 ---
 
 <Layout
@@ -14,14 +15,14 @@ import PianoImage2 from "../../public/piano2.jpeg";
 >
   <p>
     Since middle school, I enjoyed tech and problem solving. I'd solve Rubik's cubes, (attempt to)
-    recreate my favorite games in Scratch (link here), make websites with friends in my school's
-    student-led coding club, and create mods for the videogames I played.
+    recreate my favorite games in <ExternalLink href="https://scratch.mit.edu">Scratch</ExternalLink>, make websites with
+    friends in my school's student-led coding club, and create mods for the videogames I played.
   </p>
   <p>
-    Exploring new hobbies, I took up piano at the end of high school, which quickly became a
-    new favorite interest as I'd spend hours every day for years diving into music theory, chords, progressive
-    metal, jazz fusion, city pop, and some other genres you probably haven't heard of if you aren't
-    a music nerd.
+    Exploring new hobbies, I took up piano at the end of high school, which quickly became a new
+    favorite interest as I'd spend hours every day for years diving into music theory, chords,
+    progressive metal, jazz fusion, city pop, and some other genres you probably haven't heard of if
+    you aren't a music nerd.
   </p>
   <p>
     I graduated with a Computer Science degree and entered the world as a pianist in NYC, playing at
@@ -35,10 +36,10 @@ import PianoImage2 from "../../public/piano2.jpeg";
   <br />
   <h3>Diving Deeper into Software</h3>
   <p>
-    Soon after after working for a few companies, I sought to relive the passion I
-    had for programming when I making games in Scratch at 12 years old. While learning vim, I found
-    Josh Medeski's videos on dev productivity which opened my eyes to the world of untapped
-    optimization at every step of the developer workflow.
+    Soon after after working for a few companies, I sought to relive the passion I had for
+    programming when I making games in Scratch at 12 years old. While learning vim, I found Josh
+    Medeski's videos on dev productivity which opened my eyes to the world of untapped optimization
+    at every step of the developer workflow.
   </p>
   <div class="flex flex-row space-x-4">
     <iframe
@@ -54,18 +55,18 @@ import PianoImage2 from "../../public/piano2.jpeg";
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
   </div>
-  <br/>
+  <br />
   <p>
     I made my own dotfiles, setup custom window management and app switching macros on MacOS with
     Hammerspoon & Lua, and revamped my neovim and zsh config.
   </p>
   <p>
-    If you're still ⌘+Tab'ing to find Apps, I definitely recommend trying the speedy workflow of pressing <code
-      >Ctrl+V</code
-    > for VSCode, opening your hot-reloadable website on Arc Browser with <code>Ctrl+A</code>, then
-    playing music on Spotify with <code>Ctrl+S</code>. You eliminate search fatigue which is a time
-    and <b>mental</b> bottleneck. It has fundamentally changed the way I use a computer.
+    If you're still ⌘+Tab'ing to find Apps, I definitely recommend trying the speedy workflow of
+    pressing <code>Ctrl+V</code> for VSCode, opening your hot-reloadable website on Arc Browser with
+    <code>Ctrl+A</code>, then playing music on Spotify with <code>Ctrl+S</code>. You eliminate
+    search fatigue which is a time and <b>mental</b> bottleneck. It has fundamentally changed the way
+    I use a computer.
     <!-- Include a gif of this workflow -->
-     <!-- Also include article on search fatigue -->
+    <!-- Also include article on search fatigue -->
   </p>
 </Layout>

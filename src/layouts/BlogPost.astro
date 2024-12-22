@@ -52,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage, hidePubDate } = Ast
         font-style: italic;
       }
       .go-back {
-        display:block;
+        display: block;
         max-width: 1020px;
         margin: 0 auto;
         padding-bottom: 0.5em;
@@ -64,7 +64,10 @@ const { title, description, pubDate, updatedDate, heroImage, hidePubDate } = Ast
     <Header />
     <main>
       <article>
-        <a href="/blog" class="underline text-blue-700 go-back">← Go Back</a>
+        <a
+          href="/blog"
+          class="underline text-blue-700 hover:text-blue-500 transition-colors go-back">← Go Back</a
+        >
 
         <div class="hero-image">
           {
