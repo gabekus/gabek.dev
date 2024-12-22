@@ -5,7 +5,22 @@ import { SITE_TITLE } from "../consts";
 
 <header>
   <nav>
-    <h2 class="font-bold"><a href="/">{SITE_TITLE}</a></h2>
+    <a href="/">
+      <h2
+        class="rounded-md font-bold hover:rotate-6 transition-transform bg-gradient-to-r
+      from-purple-500
+      via-pink-500
+      to-blue-500
+      p-6
+      text-white
+      hover:bg-gradient-to-l
+      hover:from-teal-400
+      hover:via-cyan-500
+      hover:to-blue-600"
+      >
+        {SITE_TITLE}
+      </h2>
+    </a>
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -27,7 +42,7 @@ import { SITE_TITLE } from "../consts";
         >
       </a>
       <a href="https://www.youtube.com/@GabeKMusic" target="_blank">
-        <span class="sr-only">Subscribe to Astro on YouTube</span>
+        <span class="sr-only">Watch Gabe on YouTube</span>
         <svg
           viewBox="0 0 16 16"
           aria-hidden="true"
