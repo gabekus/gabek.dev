@@ -1,0 +1,64 @@
+---
+title: "Exploring the <ruby> Tag"
+description: ""
+pubDate: "Dec 22 2024"
+heroImage: "/ruby-tag/ruby-html.png"
+---
+
+import { Code } from "astro:components";
+import { Image } from "astro:assets";
+import ExternalLink from "../../components/ExternalLink.astro";
+
+### What
+
+Ruby text is small text displayed above regular text.
+
+<ruby class="text-3xl">
+  Regular<rt>Small</rt>
+</ruby>
+<Code lang={"html"} code="<ruby>Regular<rt>Small</rt></ruby>" />
+<br />
+`<rt>` stands for Ruby Text
+
+### Why
+
+In english, every letter has a sound. This is called a <b>phonetic alphabet.</b> You can figure how to pronounce "Regular" by sounding out each letter. However, there's a small amount of languages with non-phonetic alphabets.
+
+Japanese has thousands of characters that don't individually have a sound. You generally have to remember the pronunciation of each character.
+This is where ruby text comes in — It displays the pronunciation for those who might not yet know it.
+
+<ruby class="text-3xl">
+  速い<rt>はやい</rt>
+</ruby>
+<Code lang={"html"} code="<ruby>速い<rt>はやい</rt></ruby>" />
+<br />
+
+In addition to Japanese's logographic writing system of thousands of characters (Kanji), there's
+also a phonetic alphabet "Hiragana" which you can sound out just like English. Ruby text can be used
+to display the corresponding Hiragana characters for each Kanji character.
+
+![furigana example](/ruby-tag/furigana.png)
+
+### Use cases
+
+I've been learning Japanese with a flashcard app called <ExternalLink href="https://apps.ankiweb.net/">Anki</ExternalLink>.
+![anki example](/ruby-tag/anki-front.png)
+
+It works like you'd expect. It shows you the front of the card, you try to remember the back, then you flip it to check your answer. This card is asking me to remember the definition of the Kanji character on the front —
+What if I know that "hayai" means fast, but can't yet read "hayai" from this Kanji?
+
+Anki is highly customizable in that cards can be written in HTML with CSS styling.
+I made a card template that displays ruby text on the front of the card when I hover my mouse over it.
+![hovering to show furigana in anki](/ruby-tag/anki-furigana.png)
+
+Previously, I'd put the Hiragana in parenthesis like this:
+![Anki example with hiragana in parenthesis](/ruby-tag/parens.png)
+
+This isn't ideal because you don't get the chance to try to remember the Kanji pronunciation. It also just looks ugly and distracting — Minimalism is key for distractionless studying.
+
+### Takeaways
+
+Anywhere you can use HTML, consider getting creative 🙂
+
+Furigana is the term for ruby text in Japanese. I knew what furigana was, so I curiously asked ChatGPT if there was a way to write furigana in plaintext:
+![ChatGPT response](/ruby-tag/chatgpt.png)
