@@ -23,7 +23,7 @@ const posts = (await getCollection("blog"))
     <Header />
     <main>
       <div class="mb-20 flex flex-row items-center justify-center text-center">
-        <Image src={Me} alt="Gabe Kuslansky" class="me rounded-full" />
+        <Image loading="eager" src={Me} alt="Gabe Kuslansky" class="me rounded-full" />
         <div class="ml-6">
           <h1>Gabe Kuslansky</h1>
           <p>Meticulously refining productivity systems</p>
@@ -32,10 +32,7 @@ const posts = (await getCollection("blog"))
       <!-- <Code lang="shell" code="git clone github.com/gabekus/thing" /> -->
       <p>
         Hey what's up, I'm a software engineer, pianist and productivity enthusiast.
-        <p>
-          I'm always optimizing minutia to improve workflows in all domains, both in software
-          engineering and beyond.
-        </p>
+        <p>I optimize minutia to improve workflows in all domains, software and beyond.</p>
         <p>
           Feel free to reach out if you want to chat about productivity, software, design,
           calisthenics, music, or anything else!

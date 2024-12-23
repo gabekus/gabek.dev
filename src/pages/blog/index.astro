@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import type { CollectionEntry } from "astro:content";
 
-const { postsFromProps } = Astro.props;
+const {postsFromProps } = Astro.props;
 
 type Props = {
   postsFromProps?: CollectionEntry<"blog">[];
@@ -17,13 +17,13 @@ const posts =
   postsFromProps ??
   (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const isIndex = postsFromProps !== undefined;
+const embeddedWithRecentPosts = postsFromProps !== undefined;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    {!isIndex && <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />}
+    {!embeddedWithRecentPosts && <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />}
     <style>
       main {
         width: 960px;
@@ -95,34 +95,36 @@ const isIndex = postsFromProps !== undefined;
     </style>
   </head>
   <body>
-    {!isIndex && <Header />}
+    {!embeddedWithRecentPosts && <Header />}
     <main>
       <section>
         <ul>
           {
-            posts.map((post) => (
-              <li>
-                <a href={`/blog/${post.id}/`}>
-                  <img
-                    transition:name={`hero${post.data.title}`}
-                    width={720}
-                    height={360}
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                  />
-                  <h4 transition:name={post.data.title} class="title">
-                    {post.data.title}
-                  </h4>
-                  <p transition:name={`date${post.data.title}`} class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </a>
-              </li>
-            ))
+            posts.map((post) => {
+              return (
+                <li>
+                  <a href={`/blog/${post.id}/`}>
+                      <img
+                      transition:name={`hero${post.data.title}`}
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                    />
+                    <h4 transition:name={post.data.title} class="title">
+                      {post.data.title}
+                    </h4>
+                    <p transition:name={`date${post.data.title}`} class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </p>
+                  </a>
+                </li>
+              );
+            })
           }
         </ul>
       </section>
     </main>
-    {!isIndex && <Footer />}
+    {!embeddedWithRecentPosts && <Footer />}
   </body>
 </html>
