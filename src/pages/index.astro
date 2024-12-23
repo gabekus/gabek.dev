@@ -23,7 +23,9 @@ const posts = (await getCollection("blog"))
     <Header />
     <main>
       <div class="mb-20 flex flex-col items-center justify-center text-center md:flex-row">
-        <Image loading="eager" src={Me} alt="Gabe Kuslansky" class="me rounded-full" />
+        <a class="" href="/about">
+          <Image loading="eager" src={Me} alt="Gabe Kuslansky" class="rounded-full transition-all" />
+        </a>
         <div class="mt-6 md:ml-6 md:mt-0">
           <h1>Gabe Kuslansky</h1>
           <p>Meticulously refining productivity systems</p>
