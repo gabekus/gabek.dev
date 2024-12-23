@@ -22,9 +22,9 @@ const posts = (await getCollection("blog"))
   <body>
     <Header />
     <main>
-      <div class="mb-20 flex flex-row items-center justify-center text-center">
+      <div class="mb-20 flex flex-col items-center justify-center text-center md:flex-row">
         <Image loading="eager" src={Me} alt="Gabe Kuslansky" class="me rounded-full" />
-        <div class="ml-6">
+        <div class="mt-6 md:ml-6 md:mt-0">
           <h1>Gabe Kuslansky</h1>
           <p>Meticulously refining productivity systems</p>
         </div>
@@ -32,10 +32,17 @@ const posts = (await getCollection("blog"))
       <!-- <Code lang="shell" code="git clone github.com/gabekus/thing" /> -->
       <p>
         Hey what's up, I'm a software engineer, pianist and productivity enthusiast.
-        <p>I optimize minutia to improve workflows in all domains, software and beyond.</p>
         <p>
-          Feel free to reach out if you want to chat about productivity, software, design,
-          calisthenics, music, or anything else!
+          If I can improve your workflow, that'll make my day. I truly hope you'll find something
+          useful here.
+        </p>
+        <p>
+          Let's talk: <a href="mailto:kuslanskyg@gmaill.com">kuslanskyg@gmail.com </a>
+          <br />
+          <p class="text-sm">
+            P.S. I'm happy to casually chat about productivity, software, design, calisthenics and
+            music. Please reach out!
+          </p>
         </p>
       </p>
       <BlogsIndex postsFromProps={posts} />
