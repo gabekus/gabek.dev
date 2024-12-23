@@ -8,10 +8,20 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
   return posts.map((post) => {
-    const recentPosts = posts
-      .filter((recentPost) => recentPost.data.title !== post.data.title)
-      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-      .slice(0, 3);
+    const olderPosts = posts
+      .filter((p) => p.data.pubDate.valueOf() < post.data.pubDate.valueOf())
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    const newerPosts = posts
+      .filter(
+        (p) =>
+          p.data.pubDate.valueOf() >= post.data.pubDate.valueOf() &&
+          p.data.title !== post.data.title
+      )
+      .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+    const recentPosts = [...olderPosts, ...newerPosts].slice(0, 3);
+
     return {
       params: { slug: post.id },
       props: { post, recentPosts },
@@ -27,5 +37,7 @@ const { Content } = await render(post);
 
 <BlogPost {...post.data}>
   <Content />
-  <BlogsIndex postsFromProps={recentPosts} />
+  
+  
+  <!-- <BlogsIndex postsFromProps={recentPosts} /> -->
 </BlogPost>
